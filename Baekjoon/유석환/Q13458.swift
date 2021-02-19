@@ -1,6 +1,6 @@
 let N = Int(readLine()!)! // 시험장의 개수 N
-var A = readLine()!.split(separator: " ").map { Int($0)! } // 응시자의 수 배열 A
-let temp = readLine()!.split(separator: " ").map { Int($0)! }
+var A = readLine()!.split(separator: " ").map { Int(String($0))! } // 응시자의 수 배열 A
+let temp = readLine()!.split(separator: " ").map { Int(String($0))! }
 let B = temp[0] // 총감독관이 감시할 수 있는 응시자 수 B
 let C = temp[1] // 부감독관이 감시할 수 있는 응시자 수 C
 var result = N // 최소 감독관 수. 총감독관은 시험장에 1명씩 꼭 필요하므로 N을 대입하고 시작.
