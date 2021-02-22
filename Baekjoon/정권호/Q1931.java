@@ -18,16 +18,12 @@ public class Main {
             meetings[i][1] = Integer.parseInt(tokenizer.nextToken());
         }
 
-        Arrays.sort(meetings, new Comparator<int[]>() { // 회의의 시작 시간순으로 정렬을 해준다.
-            @Override
+        Arrays.sort(meetings, new Comparator<int[]>() { // 회의가 끝나는 순으로 정렬 만약 같다면 시작시간 순으로 정렬
+            @Override                                   // 같으면 시작시간 순으로 정렬하는 이유는
             public int compare(int[] o1, int[] o2) {
-                return o1[0] - o2[0];
-            }
-        });
-
-        Arrays.sort(meetings, new Comparator<int[]>() { // 그다음 회의의 끝나는 시간순으로 정렬을 해준다.
-            @Override
-            public int compare(int[] o1, int[] o2) {
+                if (o1[1] == o2[1]) {
+                    return o1[0] - o2[0];
+                }
                 return o1[1] - o2[1];
             }
         });
@@ -45,4 +41,3 @@ public class Main {
         System.out.println(result); // 결과 출력
     }
 }
-
